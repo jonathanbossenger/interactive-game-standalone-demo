@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+<main>
+    <div>
+        <p>Instructions: Dodge the enemies and see how long you can stay free.</p>
+        <ol>
+            <li>Click "Start Game" or press keyboard "S" to begin.</li>
+            <li>Use the arrow keys to move the logo.</li>
+            <li>Click "Reset Game" or press keyboard "R" to start over.</li>
+            <li>Click "Stop Game" to end the game.</li>
+        </ol>
+    </div>
+    <div class="interactive-game-game-block" data-wp-interactive='{ "namespace": "wp-interactive-game" }'>
+    <div>Level: <span id="level">1</span>. Time: <span id="time">0</span> seconds.</div>
+    <div tabindex="0" class="game-container" data-wp-on--keydown="actions.enableMoveIcon" data-wp-on--keyup="actions.disableMoveIcon" id="<?php echo esc_attr( $unique_id ); ?>">
+        <img data-wp-on--click="actions.initializeGame" class="game-icon" style="left: 275px; top: 275px;" src="./images/wordpress.svg" alt="Game Icon"/>
+        <img id="wix" class="enemy-icon" style="display: none; left: 0px; top:0px;" src="./images/wix.svg" alt="Wix: Icon"/>
+        <img id="squarespace" class="enemy-icon" style="display: none; left: 0px; top:0px;" src="./images/squarespace.svg" alt="Squarespace: Icon"/>
+        <img id="weebly" class="enemy-icon" style="display: none; left: 0px; top:0px;" src="./images/weebly.svg" alt="Weebly: Icon"/>
+        <img id="shopify" class="enemy-icon" style="display: none; left: 0px; top:0px;" src="./images/shopify.svg" alt="Shopify: Icon"/>
+        <img id="webflow" class="enemy-icon" style="display: none; left: 0px; top:0px;" src="./images/webflow.svg" alt="Webflow: Icon"/>
+        <img id="contentful" class="enemy-icon" style="display: none; left: 0px; top:0px;" src="./images/contentful.svg" alt="Contentful: Icon"/>
+    </div>
+    </div>
+    <div data-wp-interactive='{ "namespace": "wp-interactive-game-controls" }' >
+        <button id="start-game" data-wp-on--click="actions.startGame">Start Game</button>
+        <button id="reset-game" data-wp-on--click="actions.resetGame">Reset Game</button>
+        <button id="stop-game" data-wp-on--click="actions.stopGame">Stop Game</button>
+    </div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+<script src="dodge.js"></script>
+<script type="module" src="main.js"></script>
+</body>
+</html>
